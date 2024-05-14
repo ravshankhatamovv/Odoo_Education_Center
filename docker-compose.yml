@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  web:
+    image: odoo:17
+    depends_on:
+        - db
+    ports:
+      - "8069:8069"
+
+    volumes:
+
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons/custom-addons
+
+    environment:
+      - HOST=db
+      - USER=odoo17
+      - PASSWORD=odoo17
+  db:
+    image: postgres:16
+    environment:
+      - POSTGRES_PASSWORD=odoo17
+      - POSTGRES_USER=odoo17
+      - POSTGRES_DB=postgres 
+    
+
+  

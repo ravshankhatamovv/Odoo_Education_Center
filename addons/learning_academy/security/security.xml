@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_academy_admin" model="res.groups">
+        <field name="name">Learning Academy Management/Admin</field>
+    </record>
+
+
+    <record id="group_academy_adminisrator" model="res.groups">
+        <field name="name">Learning Academy Management/Administrators</field>
+    </record>
+
+</odoo>

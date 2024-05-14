@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_academy_courses,access.academy.courses,model_academy_courses,group_academy_admin,1,1,1,1
+access_academy_mentors,access.academy.mentors,model_academy_mentors,group_academy_admin,1,1,1,1
+access_academy_groups,access.academy.groups,model_academy_groups,group_academy_admin,1,1,1,1
+access_academy_students,access.academy.students,model_academy_students,group_academy_admin,1,1,1,1
+access_academy_payment_student,access.academy.payment_student,model_academy_payment_student,group_academy_admin,1,1,1,1
+access_academy_payment_mentor,access.academy.payment_mentor,model_academy_payment_mentor,group_academy_admin,1,1,1,1
+

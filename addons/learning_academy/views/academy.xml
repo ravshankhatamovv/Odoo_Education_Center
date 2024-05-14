@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- ##################### Information about courses ####################################### -->
+    <!-- record for course menu -->
+    <record id="action_academy_courses" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">academy.courses</field>
+        <field name="view_mode">tree,form,graph</field>
+        <field name="help" type="html" >
+            <p class="o_view_nocontent_smiling_face">
+            Create your first course for academy!!!
+            </p>
+        </field>
+    </record>
+
+ <!-- record for all students list for group menu -->
+    <record id="action_academy_coursess" model="ir.ui.view">
+        <field name="name">Courses</field>
+        <field name="model">academy.courses</field>
+        <field name="arch" type="xml">
+            <tree string="Course list">
+                <field name="name"/>
+                <field name="price"/>
+                <!-- <field name="group_ids"/> -->
+            </tree>
+        </field>
+    </record>
+
+<!-- #######################Information about students##################################### -->
+
+ <!-- record for student menu -->
+    <record id="action_academy_students" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">academy.students</field>
+        <field name="view_mode">tree,form,graph</field>
+        <field name="help" type="html" >
+            <p class="o_view_nocontent_smiling_face">
+            Create your first student for academy!!!
+            </p>
+        </field>
+    </record>
+
+ <!-- record for all students list for group menu -->
+    <record id="action_academy_studentss" model="ir.ui.view">
+        <field name="name">Students</field>
+        <field name="model">academy.students</field>
+        <field name="arch" type="xml">
+            <tree string="Student list">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="group_ids"/>
+            </tree>
+        </field>
+    </record>
+
+<!-- ########################Information about mentors#################################### -->
+
+ <!-- record for mentor menu -->
+    <record id="action_academy_mentors" model="ir.actions.act_window">
+        <field name="name">Mentors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">academy.mentors</field>
+        <field name="view_mode">tree,form,graph</field>
+        <field name="help" type="html" >
+            <p class="o_view_nocontent_smiling_face">
+            Create your first mentor for academy!!!
+            </p>
+        </field>
+    </record>
+
+ <!-- record for all students list for group menu -->
+    <record id="action_academy_mentorss" model="ir.ui.view">
+        <field name="name">Students</field>
+        <field name="model">academy.mentors</field>
+        <field name="arch" type="xml">
+            <tree string="Mentor list">
+                <field name="name"/>
+                <field name="subject"/>
+                <field name="experience"/>
+                <field name="group_ids"/>
+            </tree>
+        </field>
+    </record>
+
+
+<!-- ############################Information about groups ################################ -->
+
+ <!-- record for group menu -->
+    <record id="action_academy_groups" model="ir.actions.act_window">
+        <field name="name">Groups</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">academy.groups</field>
+        <field name="view_mode">tree,form,graph</field>
+        <field name="help" type="html" >
+            <p class="o_view_nocontent_smiling_face">
+            Create your first course for Group!!!
+            </p>
+        </field>
+    </record>
+
+ <!-- record for group list menu -->
+    <record id="action_academy_groups_tree_view" model="ir.ui.view">
+        <field name="name">Groups</field>
+        <field name="model">academy.groups</field>
+        <field name="arch" type="xml">
+            <tree string="Group list">
+                <field name="group_name"/>
+                <field name="mentor_name"/>
+                <field name="student_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_academy_groups_graph_view" model="ir.ui.view">
+        <field name="name">groups.gragh_views</field>
+        <field name="model">academy.groups</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="group_name"/>
+                <field name="mentor_name"/>
+                <field name="student_ids"/>
+            </graph>
+        </field>
+    </record>
+<!-- ##########################Information about student tuition fee################################## -->
+
+ <!-- record for payment student menu -->
+    <record id="action_academy_payment_student" model="ir.actions.act_window">
+        <field name="name">Student tuition fee</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">academy.payment_student</field>
+        <field name="view_mode">tree,form,graph</field>
+        <field name="help" type="html" >
+            <p class="o_view_nocontent_smiling_face">
+            Create your first course for Payment!!!
+            </p>
+        </field>
+    </record>
+     <!-- record for student payment list menu -->
+    <record id="action_academy_paymnet_studentss" model="ir.ui.view">
+        <field name="name">Student tuition fee</field>
+        <field name="model">academy.payment_student</field>
+        <field name="arch" type="xml">
+            <tree string="Student list">
+                <field name="name"/>
+                <field name="tuition_fee" sum="Total income:"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+<!-- ###########################Information about mentors' salary################################# -->
+
+ <!-- record for payment mentor menu -->
+    <record id="action_academy_payment_mentor" model="ir.actions.act_window">
+        <field name="name">Mentor Salary</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">academy.payment_mentor</field>
+        <field name="view_mode">tree,form,graph</field>
+        <field name="help" type="html" >
+            <p class="o_view_nocontent_smiling_face">
+            Create your first parment for Mentor!!!
+            </p>
+        </field>
+    </record>
+
+    <record id="action_academy_paymnet_mentorss" model="ir.ui.view">
+        <field name="name">Mentor Salary</field>
+        <field name="model">academy.payment_mentor</field>
+        <field name="arch" type="xml">
+            <tree string="Student list">
+                <field name="mentor_name"/>
+                <field name="salary_amount" sum="Total expense:"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+<!-- #############################Information about menu bar############################### -->
+    <!-- Main menu called Academy  -->
+    <menuitem id="menu_academy_root"
+            name="Academy"
+            sequence="9"/>
+
+    <menuitem id="menu_addings_root"
+        name="Addings"
+        parent="menu_academy_root"
+        sequence="10"/>
+
+    <!-- Sub menu called Courses -->
+    <menuitem id="menu_courses_root"
+            name="Courses"
+            parent="menu_academy_root"
+            action="action_academy_courses"
+            sequence="11"/>
+
+
+    <!-- Sub menu called Mentors -->
+    <menuitem id="menu_mentor_root"
+            name="Mentors"
+            parent="menu_academy_root"
+            action="action_academy_mentors"
+            sequence="12"/>
+    <!-- Sub menu called Studnets -->    
+    <menuitem id="menu_student_root"
+            name="Students"
+            parent="menu_academy_root"
+            action="action_academy_students"
+            sequence="13"/>
+    <!-- Sub menu called Groups -->
+    <menuitem id="menu_group_root"
+        name="Groups"
+        parent="menu_academy_root"
+        action="action_academy_groups"
+        sequence="14"/>
+
+ <!-- Sub menu called payment student -->
+    <menuitem id="menu_payment_student_root"
+        name="Payment Student"
+        parent="menu_academy_root"
+        action="action_academy_payment_student"
+        sequence="15"/>
+    
+ <!-- Sub menu called payment mnetor -->
+    <menuitem id="menu_payment_mentor_root"
+        name="Mentor Salary"
+        parent="menu_academy_root"
+        action="action_academy_payment_mentor"
+        sequence="15"/>
+
+
+
+</odoo> 
